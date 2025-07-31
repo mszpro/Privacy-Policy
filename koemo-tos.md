@@ -59,7 +59,7 @@ Developer: Smart Soft K.K.
 
 Email: contact@smartsofuto.co.jp
 
-Address: 2-6-11 Ichiokamotocho, Minato-ku, Osaka, 552-0002, Japan
+Address: Takeshima Plaza 302, 3-4-27 Takeshima, Nishiyodogawa-ku, Osaka City, Osaka Prefecture, Japan
 
 Apple's Standard End User License Agreement (EULA)
 
