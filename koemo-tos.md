@@ -1,4 +1,5 @@
-Terms of Service
+# Terms of Service for Koemo
+
 This agreement is in addition to Apple's Standard End User License Agreement ("Standard EULA"), which is accessible here: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/ and is attached in full at the end of these terms.
 
 BY USING OR ACCESSING OUR SERVICE, YOU ACCEPT THE TERMS OF SERVICE SET FORTH BELOW, WHICH IS BINDING AND ENFORCEABLE AS A LEGAL AGREEMENT SIGNED BY YOU. IF YOU DO NOT AGREE TO THESE TERMS OF SERVICE, KINDLY DO NOT INSTALL OR USE THE SERVICE ANY LONGER.
