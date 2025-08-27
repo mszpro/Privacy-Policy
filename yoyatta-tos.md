@@ -1,233 +1,175 @@
-Yoyatta — Terms of Service (ToS)
-
-Last updated: August 19, 2025 (JST)
-
-Summary (non-binding): Yoyatta (also referred to as Yoyakun) is scheduling software. “Hosts” make calendars; “Bookers” reserve time. We provide tools (iOS app for Hosts, web/app for Bookers), optional sign-in via third parties, and integrations with meeting providers (e.g., Zoom/Teams/Meet/Webex). We are not a party to any meeting you schedule. Some features are free (1 calendar), paid tiers unlock more (up to 10 calendars). Use must be lawful and respectful; no spam, abuse, or fraud. These Terms include important limitations and disclaimers—please read them carefully.
-
-⸻
-
-1) Agreement & Operator
-
-These Terms of Service (“Terms”) are a binding agreement between Smart Soft K.K. (the “Company”, “we”, “us”, or “our”) and you (“you”). They govern your access to and use of Yoyatta/Yoyakun (the “Service”), including our iOS app, App Clip, websites, APIs, and related communications.
-
-By accessing or using the Service, you agree to these Terms and our Privacy Policy (separate document). If you are using the Service for an organization, you represent that you have authority to bind that organization.
-
-Placeholders to customize
-• Operator/Company: Smart Soft K.K.
-• Contact email: me@smartsofuto.co.jp
-• Address: 555-0011
-Nishiyodogawa-ku, Osaka City, Osaka Prefecture
-3-4-27 Takeshima
-Takeshima Plaza 302
+# Yoyatta — Terms of Service
 
-⸻
+**Operator:** Smart Soft K.K. (“Company”, “we”, “us”, “our”)  
+**Service:** Yoyatta (also “Yoyakun”) — iOS app, App Clip, booking pages, APIs, and related web services  
+**Contact:** contact@smartsofuto.co.jp  
+**Address:** Takeshima Plaza 302, 3-4-27 Takeshima, Nishiyodogawa-ku, Osaka City, Osaka Prefecture, Japan  
+**Last updated:** August 27, 2025 (JST)
 
-2) Definitions
-	•	Host: A user who creates and manages a calendar others can book. Hosts currently use the iOS app.
-	•	Booker: A user who reserves a time slot via the web, App Clip, or app.
-	•	Calendar: A scheduling page a Host shares via a unique slug/URL.
-	•	Booking: A reservation for a time slot on a Calendar.
-	•	Meeting Link: A join URL for Zoom, Microsoft Teams, Google Meet, Webex, or similar.
-	•	Calendar Key Pair: Per-calendar Ed25519 keys used by the Host app to sign requests. Private keys are stored on the Host device (Keychain).
-	•	Device Attestation: Apple App Attest–based device binding used for certain host actions.
-	•	Viewer Secret / Passcode: Codes that gate access to booking detail or cancellation links.
-	•	Third-Party Providers: Identity providers (Apple, Google, GitHub, Slack, LINE, Yahoo Japan) and meeting providers (Zoom, Teams, Meet, Webex), among others.
-	•	Gravatar: Avatar service; we may derive an avatar by hashing an email address (MD5) unless customized.
+---
 
-⸻
+## 0) Summary (non-binding)
+Yoyatta is scheduling software. **Hosts** make calendars; **Bookers** reserve time. We provide tools and optional integrations (e.g., Zoom/Teams/Meet/Webex). **We are not a party to any meeting** and **we do not verify** the truth or accuracy of bookings, calendars, titles, descriptions, identities, availability, or meeting links. We are **not responsible** for no-shows, lateness, cancellations, meeting quality, or any outcome of a meeting. Some features are free; paid tiers unlock more. Use must be lawful and respectful. Please read the binding terms below.
 
-3) The Service
+---
 
-3.1 For Hosts (iOS app)
-	•	Create calendars (1 on free tier; up to 10 on paid tiers).
-	•	Configure name/description and system-generated slug (not manually editable).
-	•	Set weekly availability via ruler selector; add exceptions; later adjust booking rules.
-	•	Booking rules include (examples):
-	•	Limit one upcoming booking per email.
-	•	Buffer time before/after meetings.
-	•	Restrict who can book (allow list of emails or domain suffixes; enterprise domain).
-	•	Denylist emails/domains and country-based allow/deny rules.
-	•	Password-protected calendars.
-	•	Integrate Zoom/Teams/Meet/Webex. You may update/set the meeting link later; we email the Booker an update (ICS REQUEST) and respect free-tier email caps.
-	•	Receive email and push notifications for new bookings/cancellations.
-	•	Manage bookings and (where enabled) send one reminder email per booking.
+## 1) Agreement & Acceptance
+These Terms of Service (“Terms”) form a binding agreement between you and Smart Soft K.K. By accessing or using Yoyatta, you agree to these Terms and our Privacy Policy. If you use the Service for an organization, you represent you have authority to bind it.
 
-3.2 For Bookers (web/app/App Clip)
-	•	Book via web/App Clip and optionally sign in with Apple/Google/GitHub/Slack/LINE/Yahoo Japan.
-	•	You can cancel anytime using the link or by logging in.
-	•	Choose preferred meeting software if the Host offers options.
-	•	Your avatar may appear via Gravatar or your customization.
+**Eligibility.** You must be at least 13 years old (or the age of digital consent in your jurisdiction) and able to form a contract.
 
-3.3 Security & Abuse-Defense (Overview)
-	•	Ed25519-signed host actions; device attestation for certain device-bound operations.
-	•	CAPTCHA (e.g., Cloudflare Turnstile) on booking pages.
-	•	Viewer-secret/passcode protections on detail/cancel links.
-	•	Network-level and policy-level measures (e.g., IP/country/ASN-aware controls).
-	•	Credentials are encrypted; the Host app avoids a traditional username/password sign-up by design.
-	•	We may rate-limit, throttle, or suspend activity to protect the Service.
+---
 
-We are a software platform. We do not host your meetings and are not a party to the agreements between Hosts and Bookers.
+## 2) Key Definitions
+- **Host:** Creates and manages a calendar others can book.  
+- **Booker:** Reserves a time slot on a Host’s calendar via web, App Clip, or app.  
+- **Calendar:** A scheduling page with a unique URL/slug that a Host shares.  
+- **Booking:** A reservation for a time slot on a Calendar.  
+- **Meeting Link:** A join URL for Zoom, Microsoft Teams, Google Meet, Webex, or similar.  
+- **Third-Party Services:** Identity providers (e.g., Apple/Google/Microsoft/Slack/GitHub/LINE) and meeting providers (e.g., Zoom/Teams/Meet/Webex).
 
-⸻
+---
 
-4) Accounts & Authentication
-	•	Hosts use the iOS app; core host operations are signed with per-calendar keys and may require device attestation. Keep your device and keys secure—loss or compromise is your responsibility.
-	•	Bookers may sign in with a third-party identity provider. Your use of a provider is subject to that provider’s terms and privacy practices.
-	•	We may refuse, reclaim, or change a Calendar slug if it causes confusion, violates rights, or is abusive.
+## 3) What We Provide (and What We Don’t)
+### 3.1 The Service
+We provide software that helps Hosts publish availability and Bookers reserve time. Optional features may include email confirmations, sign-in via third parties, calendar invites, and integrations that create meeting links.
 
-Age. You must be at least 13 (or the age of digital consent where you live—e.g., 16 in parts of the EU). If you use the Service for a company, you confirm you’re authorized to do so.
+### 3.2 We Do **Not** Verify or Guarantee
+- **No verification of calendars or bookings.** We **do not verify** the accuracy, truthfulness, legality, availability, timing, or details of any **calendar**, **booking**, **title**, **description**, **pricing**, **location**, **meeting link**, **identity**, or **intent** of any user.  
+- **No endorsement.** Display of any calendar or content is not an endorsement or guarantee.  
+- **No attendance/outcome guarantee.** We are not responsible for **no-shows**, **lateness**, **cancellations**, rescheduling, meeting quality, network issues, recording practices, or any outcome of a meeting.  
+- **No dispute resolution.** Any disputes, refunds, service levels, or deliverables are strictly between Host and Booker.
 
-⸻
+### 3.3 Platform Only
+We are a software platform. We do not host your meetings, provide professional services, or act as an agent, broker, or insurer for Hosts or Bookers.
 
-5) Plans, Billing, and In-App Purchases
-	•	Free Tier: 1 calendar, email-sending caps, and other limits may apply.
-	•	Paid Tiers: Up to 10 calendars and additional limits/quotas as described in-app.
-	•	Billing: Subscriptions (if offered) are typically handled via Apple In-App Purchase (IAP). Billing, renewals, cancellations, and refunds are governed by Apple’s terms and the App Store’s rules. Manage or cancel your subscription through your Apple ID settings. We do not directly process or store IAP payment card data.
-	•	We may change prices or plan features with notice as required by law or platform policy. Changes usually take effect on your next billing cycle.
+---
 
-⸻
+## 4) Accounts & Access
+- **Hosts** manage calendars through the iOS app (and related interfaces). Keep your devices secure; you are responsible for actions taken under your account.  
+- **Bookers** may authenticate via third-party identity providers; your use of such providers is subject to their terms.  
+- We may refuse, reclaim, or change calendar slugs that cause confusion, infringe rights, or violate policy.
 
-6) Booking Relationship & Host Responsibilities
-	•	No Service Guarantee to Attend: We provide scheduling tools. We do not guarantee attendance, outcome, or quality of meetings.
-	•	Host Content: You’re responsible for the accuracy of your calendar details (availability, descriptions), booking rules, and meeting links (including replacements/updates).
-	•	Compliance: Hosts must comply with applicable laws, including data protection, marketing, and consumer rules.
-	•	Reminders/Emails: Hosts may send limited reminders through the Service; free-tier caps apply. Do not use the Service to send spam or unlawful communications.
-	•	Booking Rules: Rules like “one upcoming booking per email,” allow/deny lists, country limits, and password protection are implemented by you. You are responsible for the consequences of the rules you configure.
+---
 
-⸻
+## 5) Plans, Billing & In-App Purchases
+- **Free tier:** limited features (e.g., one calendar) and sending caps may apply.  
+- **Paid tiers:** additional calendars/features as described in-app.  
+- **Billing:** Subscriptions and payments made through Apple’s App Store are governed by Apple’s terms. Manage or cancel via your Apple ID settings. We do not store your payment card data.  
+- **Changes:** We may change prices or features with notice where required; changes typically apply to future billing cycles.
 
-7) Acceptable Use
+---
 
-You agree not to:
-	•	Use the Service for unlawful, harmful, fraudulent, or deceptive purposes.
-	•	Harass, threaten, or defame others; post or transmit hateful or obscene material.
-	•	Attempt to bypass security, rate limits, or access controls (e.g., viewer secrets, passcodes).
-	•	Interfere with or disrupt the Service, including via scraping that degrades performance.
-	•	Misrepresent your identity or affiliation.
-	•	Upload or link malicious code, perform XSS/SQLi attacks, or exploit injection vectors.
-	•	Abuse email or notification features (spam, deceptive content, or prohibited marketing).
-	•	Infringe or misappropriate any intellectual property or privacy rights.
+## 6) Host Responsibilities
+- **Content & rules.** You (Host) are solely responsible for your calendar content (titles, descriptions, branding), availability, time-zone settings, meeting links, booking rules (e.g., allow/deny lists, buffers, passcodes), and any communications with Bookers.  
+- **Compliance.** You must follow applicable laws (e.g., consumer, advertising, data protection, and anti-spam).  
+- **Integrations.** If you connect Zoom/Teams/Meet/Webex (or similar), you authorize us to create/update/cancel meetings per your instructions. Availability or performance of third-party services is not guaranteed.  
+- **No misuse.** Do not use Yoyatta to spam, mislead, or collect data unlawfully.
 
-We may investigate and take action—including removal, throttling, suspension, or termination.
+---
 
-⸻
+## 7) Booker Responsibilities
+- **Accurate info.** Provide accurate information when booking or canceling.  
+- **Third-party terms.** If you use third-party meeting software or sign-in, you are bound by those providers’ terms.  
+- **Meeting etiquette & safety.** Coordinate logistics directly with the Host; we are not involved in meeting processes or outcomes.
 
-8) Third-Party Services & Integrations
+---
 
-The Service can interoperate with third parties you choose (e.g., Zoom, Microsoft Teams, Google Meet, Webex; identity providers like Apple, Google, GitHub, Slack, LINE, Yahoo Japan; avatar services like Gravatar). Your use of any third-party service is subject to that service’s terms and privacy policies. We do not control or assume responsibility for them.
+## 8) Acceptable Use
+You agree not to:  
+- Use the Service for unlawful, harmful, fraudulent, deceptive, or abusive activity;  
+- Harass or defame others; upload hate speech, obscene, or illegal content;  
+- Circumvent access controls, rate limits, or security features;  
+- Interfere with or overload the Service (e.g., scraping that degrades performance);  
+- Upload malware or exploit vulnerabilities;  
+- Infringe or misappropriate intellectual property or privacy rights.  
 
-If a third-party service becomes unavailable or changes functionality, the related feature in our Service may stop working or change. We are not liable for third-party downtime, data loss, or changes.
+We may investigate and act (e.g., remove content, throttle, suspend, or terminate access).
 
-⸻
+---
 
-9) Privacy, Data, and Security
-	•	Privacy Policy: Our separate Privacy Policy explains what we collect and why (e.g., emails, IP, country, ASN for abuse prevention; booking details; optional avatars), how we use it (e.g., to send confirmation/updates and protect the Service), and your choices.
-	•	Gravatar: If enabled, we may compute a hash of a provided email to retrieve an avatar. You can customize or opt out by adjusting your account settings or using a different email.
-	•	Security: We employ measures such as per-calendar key signing, device attestation, encrypted credentials, CAPTCHAs, passcodes for sensitive links, and abuse signals. No system is 100% secure—use strong device protections and safeguard secrets.
-	•	Email Delivery: We send confirmations, updates (including ICS meeting updates), and limited reminders. Delivery depends on third-party mail systems and may be rate-limited.
+## 9) Third-Party Services & Links
+The Service may interoperate with or link to third-party services you choose to use. Those services are governed by their own terms and privacy policies. **We do not control or assume responsibility** for third-party services, their availability, or their data handling.
 
-⸻
+---
 
-10) Intellectual Property
+## 10) Privacy & Data
+Our **Privacy Policy** explains what we collect, how we use it, and your choices (e.g., feature-usage analytics, error/crash logging). By using the Service, you acknowledge our Privacy Policy.
 
-The Service, including software, design, logos, mascots, and content we provide, is owned by the Company or its licensors and protected by law. Except for your own content and rights expressly granted to you, we reserve all rights. You may not copy, modify, reverse-engineer, or distribute our software except as allowed by law.
+---
 
-You retain rights in your content (calendar names/descriptions, branding you supply). By providing content through the Service, you grant us a non-exclusive, worldwide license to host, process, transmit, display, and otherwise use it solely to operate and improve the Service.
+## 11) Intellectual Property; Your Content
+- **Ours.** The Service (software, designs, logos, and content we provide) is owned by us or our licensors and protected by law. Except as permitted by these Terms, you may not copy, modify, reverse engineer, or distribute it.  
+- **Yours.** You retain rights to content you submit (e.g., calendar titles, descriptions, branding). You grant us a non-exclusive, worldwide license to host, process, transmit, and display that content **solely to operate and improve the Service**.
 
-⸻
+---
 
-11) Feedback
+## 12) Feedback
+If you send ideas or suggestions, you grant us a perpetual, irrevocable, royalty-free license to use them without restriction or obligation.
 
-If you send ideas or feedback, you grant us a royalty-free, perpetual license to use them without restriction or obligation.
+---
 
-⸻
+## 13) Beta Features & Changes
+Some features may be experimental or in beta and could change or be withdrawn. We may modify or discontinue the Service (or any part) at any time; where required, we will provide notice.
 
-12) Beta & Changes to the Service
+---
 
-Some features may be pre-release or beta. They might change, break, or be withdrawn. We may modify or discontinue the Service (or any part) at any time. When required by law or platform rules, we will provide notice.
+## 14) Disclaimers
+To the fullest extent permitted by law, the Service is provided **“as is”** and **“as available.”**  
+We disclaim all warranties, express or implied, including merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that the Service will be uninterrupted, secure, error-free, or that data will not be lost.
 
-⸻
+**Meetings.** We do not verify bookings or calendars and are not responsible for any meeting, including **no-shows**, **lateness**, **cancellations**, **quality**, **outcomes**, **recordings**, or **communications** between Hosts and Bookers.
 
-13) Disclaimers
+---
 
-To the fullest extent permitted by law, the Service is provided “as is” and “as available.” We disclaim all warranties, express or implied, including merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that the Service will be uninterrupted, error-free, secure, or that data will not be lost.
+## 15) Limitation of Liability
+To the fullest extent permitted by law:  
+- We are **not liable** for any indirect, incidental, special, consequential, exemplary, or punitive damages, or lost profits, revenues, or data, even if advised of the possibility.  
+- Our **total liability** for any claim arising from or relating to the Service is limited to the greater of **(a) the amounts you paid to us in the 12 months before the event**, or **(b) JPY 10,000**.  
 
-⸻
+Some jurisdictions do not allow certain limitations; where prohibited, these limits apply to the maximum extent permitted.
 
-14) Limitation of Liability
+---
 
-To the fullest extent permitted by law:
-	•	We are not liable for indirect, incidental, special, consequential, exemplary, or punitive damages, or lost profits, revenues, or data, even if advised of the possibility.
-	•	Our total liability for any claim arising out of or relating to the Service is limited to the greater of (a) the amount you paid to us for the Service in the 12 months before the event giving rise to liability, or (b) JPY 10,000.
+## 16) Indemnification
+You will defend, indemnify, and hold harmless the Company and its affiliates, officers, directors, employees, and agents from any claims, losses, liabilities, damages, costs, and expenses (including reasonable attorneys’ fees) arising out of or related to **(a)** your use of the Service, **(b)** your content, **(c)** your breach of these Terms, or **(d)** your violation of any law or third-party right.
 
-Some jurisdictions do not allow certain limitations—these limits apply to the maximum extent permitted.
+---
 
-⸻
+## 17) Suspension & Termination
+We may suspend or terminate access if you violate these Terms, pose a risk to the Service or others, fail to pay fees, or if required by law. You may stop using the Service at any time. For App Store subscriptions, manage cancellation through your Apple ID. Sections that by nature should survive (e.g., IP, disclaimers, limitations, indemnity, governing law) will survive termination.
 
-15) Indemnification
+---
 
-You will defend, indemnify, and hold harmless the Company and its affiliates, officers, directors, employees, and agents from any claims, losses, liabilities, damages, costs, and expenses (including reasonable attorneys’ fees) arising from or related to: (a) your use of the Service; (b) your content; (c) your breach of these Terms; or (d) your violation of any law or third-party right.
+## 18) Export & Sanctions
+You must comply with applicable export control and sanctions laws. You may not use the Service if prohibited by such laws.
 
-⸻
+---
 
-16) Suspension & Termination
+## 19) Governing Law & Venue
+These Terms are governed by the laws of **Japan** (without regard to conflict of laws). You agree to the **exclusive jurisdiction of the courts located in Kyoto, Japan**, unless another venue is required by mandatory law.
 
-We may suspend or terminate your access if we believe you violated these Terms, pose a risk to the Service or others, or if required by law. You may stop using the Service at any time; for IAP subscriptions, manage cancellation through your Apple ID. Certain sections survive termination (e.g., IP, disclaimers, limitations, indemnity, governing law).
+---
 
-⸻
+## 20) Apple & Platform Terms
+When you download or use our iOS app/App Clip, you also agree to Apple’s applicable terms (including Apple’s **Licensed Application End User License Agreement**). Where Apple’s mandatory terms conflict with these Terms for iOS distribution, Apple’s terms control for that context.
 
-17) Export & Sanctions
+---
 
-You must comply with all applicable export control and sanctions laws. You may not use the Service if you are located in an embargoed country or are on a sanctions list.
+## 21) Changes to These Terms
+We may update these Terms from time to time. If changes are material, we will provide notice as required (e.g., in-app or by email). Your continued use after changes take effect constitutes acceptance.
 
-⸻
+---
 
-18) Governing Law & Venue
+## 22) Entire Agreement; Miscellaneous
+These Terms (and the documents referenced here, such as our Privacy Policy) are the entire agreement between you and us regarding the Service and supersede prior or contemporaneous agreements. If any provision is unenforceable, the remainder remains in effect. Our failure to enforce a provision is not a waiver. You may not assign these Terms without our consent; we may assign them as part of a merger, acquisition, or sale of assets.
 
-These Terms are governed by the laws of Japan, without regard to its conflict of laws principles. You agree to the exclusive jurisdiction of the courts located in Kyoto, Japan for any disputes, unless another venue is required by mandatory law.
+---
 
-Optional alternative: Insert arbitration clause or your preferred jurisdiction here if different.
-
-⸻
-
-19) Changes to These Terms
-
-We may update these Terms from time to time. If changes are material, we will provide notice as required (e.g., in-app notice or email). Your continued use of the Service after changes take effect constitutes acceptance.
-
-⸻
-
-20) Contact
-
-Questions about these Terms can be sent to: legal or support email
-Mailing address: Company address
-
-⸻
-
-21) Apple & Platform Terms (Additional)
-
-When you download or use our iOS app/App Clip, you also agree to Apple’s applicable terms (including the App Store Terms and Licensed Application End User License Agreement). To the extent these Terms conflict with Apple’s mandatory terms, Apple’s terms control for the iOS distribution context.
-
-⸻
-
-22) Service-Specific Notes
-	•	Email & ICS Updates: If a Host updates a Meeting Link, we may send an email update with an ICS REQUEST. Free-tier sending caps may apply. Delivery is best-effort.
-	•	Abuse-Prevention Signals: We may process country/ASN indicators derived from network requests to detect fraud and enforce booking rules (e.g., country allow/deny lists).
-	•	Security Controls: Booking details and cancel links can be protected by passcodes; Host management actions require signed requests and may require device attestation.
-	•	Gravatar & Avatars: If enabled, we may derive a Gravatar using a hashed email. Bookers can customize their avatar; Hosts may display it to identify participants.
-	•	Calendar Slug: Slugs are generated by the system and cannot be manually entered to avoid impersonation or namespace abuse.
-	•	Integrations: Meeting provider integrations are optional and controlled by the Host. Availability or quality of third-party integrations is not guaranteed.
-
-⸻
-
-23) Entire Agreement; Miscellaneous
-
-These Terms (and documents referenced, like the Privacy Policy) are the entire agreement between you and us regarding the Service and supersede all prior or contemporaneous agreements. If any provision is unenforceable, the remainder remains in effect. Our failure to enforce a provision is not a waiver. You may not assign these Terms without our consent; we may assign them as part of a merger, acquisition, or sale of assets.
-
-⸻
-
-Legal Notice & Disclaimer
-
-This document is provided for general informational purposes and product fit; it is not legal advice. Laws vary by jurisdiction and product specifics. Please have a qualified attorney review and adapt this ToS for your circumstances (e.g., your exact company name, address, governing law, consumer disclosures, and App Store/IAP terms).
+## 23) Contact
+**Smart Soft K.K.**  
+Takeshima Plaza 302, 3-4-27 Takeshima, Nishiyodogawa-ku, Osaka City, Osaka Prefecture, Japan  
+**Email:** contact@smartsofuto.co.jp
 
 
 (Attached) Apple Standard EULA:
