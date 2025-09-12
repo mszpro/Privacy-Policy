@@ -8,7 +8,7 @@
 3-4-27 Takeshima, Takeshima Plaza 302,  
 Nishiyodogawa-ku, Osaka City, Osaka Prefecture, Japan
 
-**Last updated:** August 27, 2025
+**Last updated:** September 12, 2025
 
 ---
 
@@ -54,10 +54,9 @@ If you connect third-party services (e.g., Zoom/Google/Teams/Webex), we receive 
 - **Log data:** IP address, device/browser type, timestamps, and basic diagnostic information for security, fraud prevention, and reliability.  
 - **Push delivery:** device push token (for Host notifications only).
 
-### 4.4 Cookies & local storage (web)
-- **Strictly necessary cookies** to operate booking pages and remember verified viewers,
-- **First-party analytics cookies** to understand feature usage (see §6).  
-We do **not** run third-party advertising cookies.
+### 4.4 Cookies, tags & local storage (web)
+- **Strictly necessary cookies** to operate booking pages and remember verified viewers.  
+- **Measurement/analytics tags** may load on booking pages (see §6). These can place **first-party** or **third-party** cookies solely for measurement and diagnostics. We do **not** run third-party advertising cookies.
 
 ---
 
@@ -71,13 +70,31 @@ We do **not** run third-party advertising cookies.
 
 ---
 
-## 6) Analytics & Diagnostics
+## 6) Analytics, Tags & Diagnostics
 
-### 6.1 First-party analytics (internal platform)
+### 6.1 Platform analytics (first-party)
 We measure feature usage (e.g., “booking created,” “integration connected/failed”) to improve Yoyatta. We do not collect meeting content, and we do not use analytics for third-party ad targeting.
 
 ### 6.2 Error/crash monitoring (Sentry)
 We use **Sentry** to capture app errors and crashes. To correlate events without directly identifying you, we may send a **hashed user ID**. Crash reports can include device/OS information and stack traces. This data is used solely to diagnose and fix issues.
+
+### 6.3 Microsoft Clarity (booking pages)
+We operate **Microsoft Clarity** on booking pages for session analytics (e.g., click/scroll heatmaps, performance metrics). We configure Clarity to mask sensitive fields by default. Clarity may set cookies for measurement. We use this data to improve page usability and reliability; we do **not** use it for ad targeting.
+
+### 6.4 Host-activated Google tags (GA4 / GTM)
+Hosts can optionally enable **Google Analytics 4 (GA4)** or **Google Tag Manager (GTM)** for their booking pages by supplying an ID in the Host settings. When enabled:
+- **Controller responsibility:** The Host is the independent controller for those analytics. We act as a service provider to place the tag, and we do not receive your GA/GTM reporting data from Google.  
+- **Behavior:** If both GA4 and GTM are set, the page loads **GTM** only (the Host can then manage all tags inside GTM).  
+- **Cookies:** Google may set cookies for measurement.  
+- **Consent:** See §6.5 for EEA/UK/CH guidance.
+
+### 6.5 Consent & regional controls (EEA/UK/CH)
+If you serve users in regions that require consent for analytics cookies (e.g., EEA/UK/CH), consent may be required **before** firing GA4/GTM.  
+- Yoyatta supports Consent Mode / consent gating for Host-activated tags via GTM/GA configuration.  
+- **Hosts enabling GA/GTM are responsible** for obtaining and recording consent where required and for configuring their tags accordingly (e.g., via GTM Consent Mode).  
+- Platform-operated measurement (e.g., Clarity) is used for product improvement; where local law requires consent, we will provide or honor a consent mechanism or equivalent regional controls.
+
+> **You never need to paste scripts into your page.** If you enable GA/GTM, only the ID is needed; Yoyatta injects the loader securely with CSP nonces.
 
 ---
 
@@ -85,6 +102,7 @@ We use **Sentry** to capture app errors and crashes. To correlate events without
 We do **not** sell personal data. We share personal data only with:
 - **Cloud infrastructure and email delivery providers** (to host and send necessary communications),
 - **Error/crash monitoring provider (Sentry)** as described in §6.2,
+- **Analytics vendors** used on booking pages (Microsoft Clarity; Google when a Host activates GA/GTM),
 - **Third-party services you connect** (e.g., Zoom/Google/Teams/Webex, Slack) strictly to perform the actions you request.
 
 We may disclose information to comply with legal obligations or to protect people, property, and our services.
@@ -102,7 +120,9 @@ We may disclose information to comply with legal obligations or to protect peopl
 ## 9) Data Retention
 - **Bookings and related records:** kept as needed to provide the service and for legitimate business purposes (e.g., security, audit), then deleted or de-identified.  
 - **Tokens for integrations:** kept only while a connection is active or until they expire/are revoked.  
-- **Logs/diagnostics:** retained for a limited period and then deleted or aggregated.
+- **Logs/diagnostics:** retained for a limited period and then deleted or aggregated.  
+- **Host-activated analytics (GA/GTM):** retention is governed by the Host’s settings in Google products; we do not control those vendor systems.  
+- **Clarity:** retained per Microsoft Clarity’s standard retention; we use aggregated insights for UX and reliability.
 
 ---
 
@@ -112,14 +132,14 @@ We use technical and organizational measures appropriate to the risk to protect 
 ---
 
 ## 11) International Transfers
-We may process and store data in countries outside your own. Where required, we use appropriate safeguards consistent with applicable law.
+We may process and store data in countries outside your own. Where required, we use appropriate safeguards consistent with applicable law. Analytics vendors (e.g., Microsoft, Google) may process data in multiple regions; see their privacy documentation for details.
 
 ---
 
 ## 12) Your Choices
 - **Disconnect integrations:** you can remove connected services at any time.  
 - **Manage bookings:** cancel via the links we provide; we’ll send updated calendar invites.  
-- **Diagnostics/analytics:** you may limit certain diagnostics in OS settings and contact us for additional options where feasible.  
+- **Diagnostics/analytics:** you may limit certain diagnostics in OS settings; for web, you can manage cookies via your browser and, where available, consent banners. For Host-activated GA/GTM, follow the Host’s consent controls or contact the Host.  
 - **Email preferences:** booking-related emails are necessary to operate Yoyatta; we don’t send marketing emails without consent.
 
 ---
