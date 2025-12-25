@@ -1,5 +1,3 @@
-Of course. Here is the updated privacy policy with the requested information about iCloud usage.
-
 # Privacy Policy
 
 ## 1. Introduction
