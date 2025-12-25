@@ -1,9 +1,9 @@
 # Terms of Service for LOFI CAT
 
-**Effective Date:** [DATE]  
-**Last Updated:** [DATE]
+**Effective Date:** 2025-12-25
+**Last Updated:** 2025-12-25
 
-These Terms of Service (“Terms”) are an agreement between you (“you” or “User”) and **Smart Soft K.K.** (“Company,” “we,” “us,” or “our”) regarding your use of the **LOFI CAT** mobile application and related services (collectively, the “Service”).
+These Terms of Service (“Terms”) are an agreement between you (“you” or “User”) and **AsterKit Software Limited** (“Company,” “we,” “us,” or “our”) regarding your use of the **LOFI CAT** mobile application and related services (collectively, the “Service”).
 
 This agreement is **in addition to Apple’s Standard End User License Agreement** (“Standard EULA”), which is accessible here:  
 https://www.apple.com/legal/internet-services/itunes/dev/stdeula/  
